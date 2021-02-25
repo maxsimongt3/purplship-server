@@ -30,8 +30,12 @@ class Carrier(Entity):
         return None
 
     @property
+    def settings(self):
+        return self._linked_settings()
+
+    @property
     def data(self) -> CarrierSettings:
-        settings = self._linked_settings()
+        settings = self.settings
         return CarrierSettings.create({
             'id': settings.pk,
             'carrier_name': settings.carrier_name,

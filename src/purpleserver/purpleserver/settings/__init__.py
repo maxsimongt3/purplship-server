@@ -7,3 +7,6 @@ from purpleserver.settings.constance import *
 
 if config('MULTI_TENANT_ENABLE', default=False, cast=bool):
     from purpleserver.settings.tenants import *
+
+if 'purpleserver.graph' in PURPLSHIP_APPS:
+    from purpleserver.settings.graph import *
